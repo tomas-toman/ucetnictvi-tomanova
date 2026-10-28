@@ -1,3 +1,5 @@
+import Hero from "@/modules/hero/Hero";
+
 export default function Home() {
-  return <div className="bg-red-400 h-10"></div>;
+  return <Hero />;
 }

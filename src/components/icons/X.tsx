@@ -3,6 +3,7 @@ import { SVGProps } from "react";
 export default function X(props: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       width="22"
       height="22"
