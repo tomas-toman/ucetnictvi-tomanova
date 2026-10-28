@@ -8,7 +8,7 @@ type ItemProps = {
 
 export default function Item({ Icon, title, description }: ItemProps) {
   return (
-    <div className="flex flex-col gap-2">
+    <li className="flex flex-col gap-2">
       <div className="bg-teal/20 w-fit rounded-md p-2">
         <Icon className="size-12 shrink-0 text-teal" />
       </div>
@@ -16,6 +16,6 @@ export default function Item({ Icon, title, description }: ItemProps) {
         <h3 className="text-xl font-medium mb-1">{title}</h3>
         <p className="text-dim-gray">{description}</p>
       </div>
-    </div>
+    </li>
   );
 }

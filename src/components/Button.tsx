@@ -43,7 +43,7 @@ const BASE_STYLE =
 
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
   primary:
-    "bg-terracotta text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-terracotta),black_10%)] active:bg-[color-mix(in_oklab,var(--color-terracotta),black_15%)]",
+    "bg-terracotta text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-terracotta),black_10%)] active:bg-[color-mix(in_oklab,var(--color-terracotta),black_15%)] focus:outline-terracotta",
 };
 
 const EXTERNAL_HREF = /^(?:[a-z][a-z\d+\-.]*:|\/\/)/i;
@@ -82,7 +82,9 @@ export default function Button(props: ButtonProps) {
   );
 
   if (props.href !== undefined) {
-    const Component: ElementType = EXTERNAL_HREF.test(props.href) ? "a" : Link;
+    const isNativeAnchor =
+      EXTERNAL_HREF.test(props.href) || props.href.startsWith("#");
+    const Component: ElementType = isNativeAnchor ? "a" : Link;
 
     return (
       <Component

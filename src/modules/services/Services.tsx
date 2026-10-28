@@ -7,10 +7,10 @@ import People from "@/components/icons/People";
 
 export default function Services() {
   return (
-    <section className="h-80 py-10" id="sluzby">
+    <section className="py-10" id="sluzby">
       <div className="max-w-300 mx-auto px-4">
         <h2 className="text-teal text-3xl font-medium mb-8">Moje služby</h2>
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(12rem,1fr))] gap-4">
+        <ul className="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-4">
           <Item
             Icon={Calculator}
             title="Učetnictví"
@@ -36,7 +36,7 @@ export default function Services() {
             title="Neziskové organizace"
             description="Zkušenosti s účetnictvím veřejného sektoru."
           />
-        </div>
+        </ul>
       </div>
     </section>
   );

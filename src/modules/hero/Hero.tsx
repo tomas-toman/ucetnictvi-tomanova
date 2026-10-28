@@ -25,7 +25,7 @@ export default function Hero() {
           Pomohu Vám mít učetnictví pod kontrolou, ať už jste OSVČ, menší firma
           nebo nezisková organizace.
         </p>
-        <Button>
+        <Button href="#sluzby">
           Nabídka služeb
           <ArrowRight />
         </Button>

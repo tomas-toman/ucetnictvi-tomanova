@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Caveat, Lato, Playfair_Display } from "next/font/google";
+import { Carlito, Caveat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/modules/header/Header";
 
@@ -9,10 +9,10 @@ const caveat = Caveat({
   variable: "--font-caveat",
 });
 
-const lato = Lato({
+const carlito = Carlito({
   subsets: ["latin", "latin-ext"],
   weight: ["400", "700"],
-  variable: "--font-lato",
+  variable: "--font-carlito",
 });
 
 const playfair = Playfair_Display({
@@ -28,9 +28,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="cs">
+    <html lang="cs" data-scroll-behavior="smooth">
       <body
-        className={`${caveat.variable} ${lato.variable} ${playfair.variable}`}
+        className={`${caveat.variable} ${carlito.variable} ${playfair.variable}`}
       >
         <Header />
         <main>{children}</main>
