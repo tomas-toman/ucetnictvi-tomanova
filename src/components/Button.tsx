@@ -39,11 +39,11 @@ interface ButtonAsLinkProps extends ButtonBaseProps {
 type ButtonProps = ButtonAsButtonProps | ButtonAsLinkProps;
 
 const BASE_STYLE =
-  "cursor-pointer py-2 px-4 rounded-full flex gap-2 items-center transition-colors";
+  "cursor-pointer py-2 px-4 rounded-md flex gap-2 items-center transition-colors";
 
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
   primary:
-    "bg-verdigris text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-verdigris),black_10%)] active:bg-[color-mix(in_oklab,var(--color-verdigris),black_15%)]",
+    "bg-terracotta text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-terracotta),black_10%)] active:bg-[color-mix(in_oklab,var(--color-terracotta),black_15%)]",
 };
 
 const EXTERNAL_HREF = /^(?:[a-z][a-z\d+\-.]*:|\/\/)/i;

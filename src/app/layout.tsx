@@ -22,7 +22,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Účetnictví Václava Tomanová",
+  title: "Účetnictví Václava Malá Tomanová",
   description: "",
 };
 

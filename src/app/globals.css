@@ -8,16 +8,15 @@
 
 @theme {
   --color-ghost-white: #faf7fd;
-  --color-verdigris: #1b998b;
-  --color-lavender: #f8f1ff;
-  --color-thistle: #decdf5;
+  --color-terracotta: #b84a33;
+  --color-teal: #1f7f74;
   --color-dim-gray: #656176;
   --color-charcoal: #534d56;
 }
 
 @layer base {
   :focus-visible {
-    outline: 2px solid var(--color-verdigris);
+    outline: 2px solid var(--color-teal);
     outline-offset: 4px;
   }
 }

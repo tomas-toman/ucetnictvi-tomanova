@@ -16,11 +16,11 @@ export default function Header() {
   return (
     <header className="bg-ghost-white sticky top-0 z-50">
       <div className="relative bg-ghost-white max-w-300 h-25 mx-auto flex flex-row justify-between items-center px-4">
-        <Link href="/" className="flex flex-col rounded-sm">
+        <Link href="/" className="flex flex-col rounded-md">
           <span className="logo text-[32px] lg:text-[48px] leading-none">
-            Václava Tomanová
+            Václava Malá Tomanová
           </span>
-          <span className="text-[9px] lg:text-sm uppercase tracking-widest text-verdigris">
+          <span className="text-[9px] lg:text-sm uppercase tracking-widest text-teal text-center">
             Účetní | Vaše čísla pod kontrolou
           </span>
         </Link>
@@ -57,18 +57,14 @@ export default function Header() {
         >
           <nav
             aria-label="Hlavní menu"
-            className="flex flex-col gap-3 p-4 rounded-md mb-2 bg-ghost-white shadow-2xl lg:flex-row lg:gap-8 lg:p-0 lg:mb-0 lg:rounded-none lg:bg-transparent lg:shadow-none"
+            className="flex flex-col gap-3 p-4 rounded-md mb-2 bg-ghost-white shadow-2xl lg:flex-row lg:gap-8 lg:p-0 lg:mb-0 lg:bg-transparent lg:shadow-none"
           >
-            <NavLink label="Úvod" href="#" />
-            <NavLink label="Služby" href="#" />
-            <NavLink label="O mně" href="#" />
-            <NavLink label="Kontakt" href="#" />
+            <NavLink label="Služby" href="#sluzby" />
+            <NavLink label="Ceník" href="#cenik" />
+            <NavLink label="Kontakt" href="#kontakt" />
           </nav>
 
-          <Button
-            href="#"
-            className="mx-auto rounded-md lg:mx-0 lg:rounded-full"
-          >
+          <Button href="#kontakt" className="mx-auto lg:mx-0">
             <Mail />
             Kontaktujte mě
           </Button>
