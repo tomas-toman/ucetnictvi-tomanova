@@ -1,0 +1,40 @@
+import type { Metadata } from "next";
+import { Caveat, Lato, Playfair_Display } from "next/font/google";
+import "./globals.css";
+import Header from "@/modules/header/Header";
+
+const caveat = Caveat({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-caveat",
+});
+
+const lato = Lato({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "700"],
+  variable: "--font-lato",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin", "latin-ext"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+});
+
+export const metadata: Metadata = {
+  title: "Učetnictví Václava Malá Tomanová",
+  description: "",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html lang="cs">
+      <body
+        className={`${caveat.variable} ${lato.variable} ${playfair.variable}`}
+      >
+        <Header />
+        <main>{children}</main>
+      </body>
+    </html>
+  );
+}
