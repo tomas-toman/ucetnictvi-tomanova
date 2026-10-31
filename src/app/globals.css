@@ -1,18 +1,12 @@
 @import "tailwindcss";
 
-@theme inline {
-  --font-sans: var(--font-carlito);
-  --font-heading: var(--font-playfair);
-  --font-logo: var(--font-caveat);
-}
-
 @theme {
   --color-ghost-white: #faf7fd;
-  --color-terracotta: #b84a33;
+  --color-lapis: #26619c;
   --color-teal: #1f7f74;
   --color-dim-gray: #656176;
   --color-charcoal: #534d56;
-  --spacing-header: 6.25rem;
+  --spacing-header: 5rem;
 }
 
 @layer base {
@@ -34,16 +28,7 @@
 
 body {
   background-color: var(--color-ghost-white);
-  font-family: var(--font-carlito), sans-serif;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--font-playfair), serif;
+  font-family: var(--font-roboto), sans-serif;
 }
 
 ::selection {
@@ -56,8 +41,4 @@ h6 {
   background: var(--color-teal);
   color: var(--color-ghost-white);
   text-shadow: none;
-}
-
-.logo {
-  font-family: var(--font-caveat), cursive;
 }

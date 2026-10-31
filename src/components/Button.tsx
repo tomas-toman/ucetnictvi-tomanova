@@ -43,7 +43,7 @@ const BASE_STYLE =
 
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
   primary:
-    "bg-terracotta text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-terracotta),black_10%)] active:bg-[color-mix(in_oklab,var(--color-terracotta),black_15%)] focus:outline-terracotta",
+    "bg-lapis text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-lapis),black_10%)] active:bg-[color-mix(in_oklab,var(--color-lapis),black_15%)] focus:outline-lapis",
 };
 
 const EXTERNAL_HREF = /^(?:[a-z][a-z\d+\-.]*:|\/\/)/i;

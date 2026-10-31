@@ -8,6 +8,7 @@ import Mail from "@/components/icons/Mail";
 import Menu from "@/components/icons/Menu";
 import X from "@/components/icons/X";
 import NavLink from "./NavLink";
+import Image from "next/image";
 
 const DROPDOWN_ID = "main-dropdown";
 
@@ -28,13 +29,21 @@ export default function Header() {
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="flex flex-col rounded-md"
+          className="flex items-center justify-center gap-3 rounded-md text-[clamp(14px,4vw,20px)]"
         >
-          <span className="logo text-[clamp(26px,7vw,48px)] leading-none">
+          <Image
+            src="/images/Logo.svg"
+            alt="Logo"
+            height={43}
+            width={60}
+            className="h-auto w-[3em]"
+          />
+
+          <span className="leading-none flex flex-col">
             Václava Malá Tomanová
-          </span>
-          <span className="text-[9px] lg:text-sm uppercase tracking-widest text-teal text-center">
-            Účetní | Vaše čísla pod kontrolou
+            <span className="text-[0.7em] tracking-widest text-teal leading-none">
+              Účetní služby
+            </span>
           </span>
         </Link>
 
@@ -72,14 +81,14 @@ export default function Header() {
         >
           <nav
             aria-label="Hlavní menu"
-            className="flex flex-col divide-y divide-gray-200 p-4 rounded-md mb-2 bg-ghost-white shadow-2xl lg:flex-row lg:gap-8 lg:divide-y-0 lg:p-0 lg:mb-0 lg:bg-transparent lg:shadow-none"
+            className="flex flex-col divide-y divide-gray-200 p-4 rounded-md mb-2 bg-ghost-white shadow-lg lg:flex-row lg:gap-8 lg:divide-y-0 lg:p-0 lg:mb-0 lg:bg-transparent lg:shadow-none"
           >
             <NavLink label="Služby" href="#sluzby" />
             <NavLink label="Ceník" href="#cenik" />
             <NavLink label="Kontakt" href="#kontakt" />
           </nav>
 
-          <Button href="#kontakt" className="mx-auto lg:mx-0">
+          <Button href="#kontakt" className="mx-auto lg:mx-0 shadow-lg">
             <Mail />
             Kontaktujte mě
           </Button>

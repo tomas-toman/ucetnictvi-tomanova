@@ -13,6 +13,10 @@ export default function Hero() {
         sizes="100vw"
         className="-z-10 object-cover object-[left_93%]"
       />
+
+      {/* White gradient overlay */}
+      <div className="-z-10 pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_95%_95%_at_40%_0%,transparent_0%,var(--color-ghost-white)_100%)]" />
+
       <div className="flex-1 w-full max-w-300 mx-auto flex flex-col justify-center items-start px-4">
         <span className="uppercase text-teal font-bold ">
           Profesionální účetní služby
