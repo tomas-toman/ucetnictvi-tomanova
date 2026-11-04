@@ -24,12 +24,12 @@ export default function Item({
   return (
     <li
       className={cn(
-        "relative flex flex-col rounded-xl border bg-white p-6 text-left shadow-sm transition motion-safe:hover:-translate-y-1 hover:shadow-lg",
+        "relative flex flex-col rounded-md border bg-white p-6 text-left shadow-sm transition motion-safe:hover:-translate-y-1 hover:shadow-lg",
         isRecommended ? "border-teal ring-1 ring-teal" : "border-dim-gray/20",
       )}
     >
       {isRecommended && (
-        <span className="absolute -top-3 left-6 rounded-full bg-teal px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ghost-white">
+        <span className="absolute -top-3 left-6 rounded-md bg-teal px-3 py-1 text-xs font-semibold uppercase tracking-wide text-ghost-white">
           Doporučujeme
         </span>
       )}

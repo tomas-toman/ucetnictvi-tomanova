@@ -25,11 +25,11 @@ export default function Header() {
 
   return (
     <header className="bg-ghost-white sticky top-0 z-50 shadow-sm">
-      <div className="relative bg-ghost-white max-w-300 h-header mx-auto flex flex-row justify-between items-center px-4">
+      <div className="relative bg-ghost-white max-w-300 h-header mx-auto flex flex-row justify-between items-center px-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="flex items-center justify-center gap-3 rounded-md text-[clamp(14px,4vw,20px)]"
+          className="flex items-center justify-center gap-3 rounded-md lg:justify-self-start text-[clamp(14px,4vw,20px)]"
         >
           <Image
             src="/images/Logo.svg"
@@ -88,7 +88,7 @@ export default function Header() {
             <NavLink label="Kontakt" href="#kontakt" />
           </nav>
 
-          <Button href="#kontakt" className="mx-auto lg:mx-0 shadow-lg">
+          <Button href="#kontakt" className="mx-auto lg:mx-0 lg:justify-self-end shadow-lg">
             <Mail />
             Kontaktujte mě
           </Button>

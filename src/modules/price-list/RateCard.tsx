@@ -25,7 +25,7 @@ function formatPrice({ price, unit }: Rate) {
 
 export default function RateCard({ title, rates }: RateCardProps) {
   return (
-    <div className="rounded-xl border border-dim-gray/20 bg-white p-6 text-left shadow-sm transition motion-safe:hover:-translate-y-1 hover:shadow-lg md:p-8">
+    <div className="rounded-md border border-dim-gray/20 bg-white p-6 text-left shadow-sm transition motion-safe:hover:-translate-y-1 hover:shadow-lg md:p-8 h-fit">
       <h3 className="text-2xl font-medium text-charcoal">{title}</h3>
 
       <hr className="my-6 border-dim-gray/15" />

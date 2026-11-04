@@ -4,10 +4,13 @@ import ArrowRight from "@/components/icons/ArrowRight";
 
 export default function Hero() {
   return (
-    <section className="relative isolate flex flex-col min-h-[max(25rem,23.4vw)]">
+    <section
+      className="relative isolate flex flex-col min-h-[max(25rem,23.4vw)]"
+      id="hero"
+    >
       <Image
         src="/images/HeroBackground.webp"
-        alt=""
+        alt="Hero background image"
         fill
         preload
         sizes="100vw"

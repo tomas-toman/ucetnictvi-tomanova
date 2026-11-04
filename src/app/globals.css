@@ -22,13 +22,35 @@
 
   :focus-visible {
     outline: 2px solid var(--color-teal);
-    outline-offset: 4px;
+    outline-offset: 2px;
   }
 }
 
 body {
   background-color: var(--color-ghost-white);
   font-family: var(--font-roboto), sans-serif;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-teal) transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-teal);
+  border-radius: 9999px;
 }
 
 ::selection {

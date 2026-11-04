@@ -38,9 +38,9 @@ export default function MonthlyPlans() {
         />
       </ul>
 
-      <p className="mx-auto mt-10 w-fit rounded-lg bg-teal/10 px-5 py-3 text-charcoal">
-        <span className="font-semibold">* Překročíte občas limit?</span>{" "}
-        Každý další doklad nad rámec paušálu je za{" "}
+      <p className="mx-auto mt-10 w-fit rounded-md bg-teal/10 px-5 py-3 text-charcoal">
+        <span className="font-semibold">* Překročíte občas limit?</span> Každý
+        další doklad nad rámec paušálu je za{" "}
         <span className="font-semibold text-teal">35 Kč</span>.
       </p>
     </>
