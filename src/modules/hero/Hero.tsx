@@ -5,7 +5,7 @@ import ArrowRight from "@/components/icons/ArrowRight";
 export default function Hero() {
   return (
     <section
-      className="relative isolate flex flex-col min-h-[max(25rem,23.4vw)]"
+      className="relative isolate overflow-hidden flex flex-col min-h-[max(25rem,23.4vw)]"
       id="hero"
     >
       <Image
@@ -14,13 +14,16 @@ export default function Hero() {
         fill
         preload
         sizes="100vw"
-        className="-z-10 object-cover object-[left_93%]"
+        className="-z-10 object-cover object-[left_93%] motion-safe:animate-hero-zoom"
       />
 
       {/* White gradient overlay */}
       <div className="-z-10 pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_95%_95%_at_40%_0%,transparent_0%,var(--color-ghost-white)_100%)]" />
 
-      <div className="flex-1 w-full max-w-300 mx-auto flex flex-col justify-center items-start px-4">
+      <div
+        data-intro="children"
+        className="flex-1 w-full max-w-300 mx-auto flex flex-col justify-center items-start px-4"
+      >
         <span className="uppercase text-teal font-bold ">
           Profesionální účetní služby
         </span>
@@ -34,7 +37,7 @@ export default function Hero() {
         </p>
         <Button href="#sluzby">
           Nabídka služeb
-          <ArrowRight />
+          <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
       </div>
     </section>

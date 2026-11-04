@@ -1,0 +1,32 @@
+@theme {
+  --animate-hero-zoom: hero-zoom 2.4s var(--ease-out-expo) backwards;
+  --animate-fade-in: fade-in 0.3s ease-out backwards;
+  --animate-pop-in: pop-in 0.6s var(--ease-out-expo) backwards;
+  --animate-draw: draw 0.5s ease-out 0.25s backwards;
+
+  @keyframes hero-zoom {
+    from {
+      transform: scale(1.08);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(-0.25rem);
+    }
+  }
+
+  @keyframes pop-in {
+    from {
+      opacity: 0;
+      transform: scale(0.6);
+    }
+  }
+
+  @keyframes draw {
+    from {
+      stroke-dashoffset: 24;
+    }
+  }
+}

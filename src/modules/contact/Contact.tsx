@@ -27,7 +27,9 @@ const CONTACT_DETAILS = [
 export default function Contact() {
   return (
     <section className="py-10 max-w-250 mx-auto px-4" id="kontakt">
-      <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden bg-white rounded-md shadow-sm border border-dim-gray/20">
+      <div
+        data-reveal="self"
+        className="grid grid-cols-1 md:grid-cols-2 overflow-hidden bg-white rounded-md shadow-sm border border-dim-gray/20">
         <div className="flex flex-col gap-8 bg-linear-to-br from-teal to-lapis p-8 text-white md:p-10">
           <div className="flex flex-col gap-8">
             <div className="flex flex-col gap-3">

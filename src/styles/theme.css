@@ -1,0 +1,10 @@
+@theme {
+  --color-ghost-white: #faf7fd;
+  --color-lapis: #26619c;
+  --color-teal: #1f7f74;
+  --color-dim-gray: #656176;
+  --color-charcoal: #534d56;
+  --spacing-header: 5rem;
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}

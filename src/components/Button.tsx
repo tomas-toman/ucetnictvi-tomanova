@@ -39,7 +39,7 @@ interface ButtonAsLinkProps extends ButtonBaseProps {
 type ButtonProps = ButtonAsButtonProps | ButtonAsLinkProps;
 
 const BASE_STYLE =
-  "cursor-pointer py-2 px-4 rounded-md flex gap-2 items-center transition-colors";
+  "group cursor-pointer py-2 px-4 rounded-md flex gap-2 items-center transition-colors";
 
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
   primary:

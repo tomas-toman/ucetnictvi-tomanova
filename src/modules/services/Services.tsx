@@ -9,8 +9,13 @@ export default function Services() {
   return (
     <section className="py-10" id="sluzby">
       <div className="max-w-300 mx-auto px-4">
-        <h2 className="text-teal text-3xl font-medium mb-8">Moje služby</h2>
-        <ul className="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-4">
+        <h2 data-reveal="self" className="text-teal text-3xl font-medium mb-8">
+          Moje služby
+        </h2>
+        <ul
+          data-reveal="children"
+          className="grid grid-cols-[repeat(auto-fit,minmax(8rem,1fr))] gap-4"
+        >
           <Item
             Icon={Calculator}
             title="Učetnictví"

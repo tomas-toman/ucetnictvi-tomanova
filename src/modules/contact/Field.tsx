@@ -45,7 +45,10 @@ export default function Field({
       </div>
       {children}
       {error && (
-        <p id={`${id}-error`} className="text-sm text-red-700">
+        <p
+          id={`${id}-error`}
+          className="text-sm text-red-700 motion-safe:animate-fade-in"
+        >
           {error}
         </p>
       )}

@@ -1,0 +1,42 @@
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+:is([data-intro="children"], [data-reveal="children"]) > :nth-child(2) {
+  --stagger: 1;
+}
+:is([data-intro="children"], [data-reveal="children"]) > :nth-child(3) {
+  --stagger: 2;
+}
+:is([data-intro="children"], [data-reveal="children"]) > :nth-child(4) {
+  --stagger: 3;
+}
+:is([data-intro="children"], [data-reveal="children"]) > :nth-child(5) {
+  --stagger: 4;
+}
+:is([data-intro="children"], [data-reveal="children"]) > :nth-child(n + 6) {
+  --stagger: 5;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-intro="children"] > * {
+    animation: fade-up 0.9s var(--ease-out-expo)
+      calc(150ms + var(--stagger, 0) * 120ms) backwards;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) and (scripting: enabled) {
+  [data-reveal="self"]:not([data-revealed]),
+  [data-reveal="children"]:not([data-revealed]) > * {
+    opacity: 0;
+  }
+
+  [data-reveal="self"][data-revealed],
+  [data-reveal="children"][data-revealed] > * {
+    animation: fade-up 0.9s var(--ease-out-expo)
+      calc(var(--stagger, 0) * 100ms) backwards;
+  }
+}

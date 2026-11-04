@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
 import Header from "@/modules/header/Header";
+import RevealObserver from "@/components/RevealObserver";
 
 const roboto = Roboto({
   subsets: ["latin", "latin-ext"],
@@ -19,6 +20,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className={`${roboto.variable}`}>
         <Header />
         <main>{children}</main>
+        <RevealObserver />
       </body>
     </html>
   );

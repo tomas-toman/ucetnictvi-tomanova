@@ -1,0 +1,33 @@
+@layer base {
+  html {
+    scroll-padding-top: var(--spacing-header);
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal);
+    outline-offset: 2px;
+  }
+}
+
+body {
+  background-color: var(--color-ghost-white);
+  font-family: var(--font-roboto), sans-serif;
+}
+
+::selection {
+  background: var(--color-teal);
+  color: var(--color-ghost-white);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: var(--color-teal);
+  color: var(--color-ghost-white);
+  text-shadow: none;
+}

@@ -9,7 +9,7 @@ import RateCard from "./RateCard";
 
 export default function Rates() {
   return (
-    <div className="mt-16 grid gap-6 md:grid-cols-2">
+    <div data-reveal="children" className="mt-16 grid gap-6 md:grid-cols-2">
       <RateCard
         title="Jednorázové úkony a přiznání"
         rates={[

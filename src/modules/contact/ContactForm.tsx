@@ -128,7 +128,7 @@ export default function ContactForm() {
       {state.status === "failed" && (
         <p
           role="alert"
-          className="rounded-md bg-red-50 px-4 py-3 text-sm text-red-800"
+          className="rounded-md bg-red-50 px-4 py-3 text-sm text-red-800 motion-safe:animate-fade-in"
         >
           Zprávu se nepodařilo odeslat. Zkuste to prosím za chvíli znovu.
         </p>
@@ -146,7 +146,7 @@ export default function ContactForm() {
           className="shrink-0 justify-center"
         >
           Odeslat zprávu
-          <ArrowRight />
+          <ArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
         </Button>
       </div>
     </form>
@@ -157,10 +157,10 @@ function SuccessMessage() {
   return (
     <div
       role="status"
-      className="flex h-full min-h-80 flex-col items-center justify-center gap-4 text-center"
+      className="flex h-full min-h-80 flex-col items-center justify-center gap-4 text-center motion-safe:animate-fade-in"
     >
-      <span className="rounded-full bg-teal/15 p-4">
-        <Check className="size-8 text-teal" />
+      <span className="rounded-full bg-teal/15 p-4 motion-safe:animate-pop-in">
+        <Check className="size-8 text-teal *:[stroke-dasharray:24] motion-safe:*:animate-draw" />
       </span>
       <h3 className="text-2xl font-medium text-charcoal">Děkuji za zprávu</h3>
       <p className="max-w-80 text-dim-gray">

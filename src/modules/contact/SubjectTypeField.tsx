@@ -41,7 +41,7 @@ export default function SubjectTypeField({
         ))}
       </div>
       {error && (
-        <p id={`${ID}-error`} className="mt-1.5 text-sm text-red-700">
+        <p id={`${ID}-error`} className="mt-1.5 text-sm text-red-700 motion-safe:animate-fade-in">
           {error}
         </p>
       )}

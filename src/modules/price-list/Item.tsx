@@ -24,7 +24,7 @@ export default function Item({
   return (
     <li
       className={cn(
-        "relative flex flex-col rounded-md border bg-white p-6 text-left shadow-sm transition motion-safe:hover:-translate-y-1 hover:shadow-lg",
+        "relative flex flex-col rounded-md border bg-white p-6 text-left shadow-sm transition-[translate,box-shadow] duration-300 motion-safe:hover:-translate-y-1 hover:shadow-lg",
         isRecommended ? "border-teal ring-1 ring-teal" : "border-dim-gray/20",
       )}
     >
