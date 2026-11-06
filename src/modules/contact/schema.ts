@@ -23,7 +23,8 @@ export type ContactFormState =
   | { status: "idle" }
   | { status: "success" }
   | { status: "invalid"; values: ContactFormValues; errors: ContactFormErrors }
-  | { status: "failed"; values: ContactFormValues };
+  | { status: "failed"; values: ContactFormValues }
+  | { status: "rate-limited"; values: ContactFormValues };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const PHONE_PATTERN = /^\+?[\d\s()-]{9,20}$/;

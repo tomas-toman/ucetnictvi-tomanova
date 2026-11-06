@@ -134,6 +134,16 @@ export default function ContactForm() {
           </p>
         )}
 
+        {state.status === "rate-limited" && (
+          <p
+            role="alert"
+            className="rounded-md bg-red-50 px-4 py-3 text-sm text-red-800 motion-safe:animate-fade-in"
+          >
+            Momentálně nelze odeslat další zprávu. Zkuste to prosím později,
+            nebo mi zavolejte.
+          </p>
+        )}
+
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-dim-gray">
             Vaše údaje použiji pouze k odpovědi na tuto zprávu.

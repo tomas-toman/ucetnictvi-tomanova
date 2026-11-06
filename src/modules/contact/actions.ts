@@ -1,6 +1,7 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import { isWithinContactRateLimit } from "./rateLimit";
 import {
   ContactFormState,
   ContactFormValues,
@@ -25,6 +26,10 @@ export async function sendContactMessage(
 
   if (Object.keys(errors).length > 0) {
     return { status: "invalid", values, errors };
+  }
+
+  if (!(await isWithinContactRateLimit())) {
+    return { status: "rate-limited", values };
   }
 
   try {
