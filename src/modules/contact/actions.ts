@@ -1,5 +1,6 @@
 "use server";
 
+import nodemailer from "nodemailer";
 import {
   ContactFormState,
   ContactFormValues,
@@ -7,6 +8,9 @@ import {
   readContactForm,
   validateContactForm,
 } from "./schema";
+
+const SMTP_HOST = "smtp.seznam.cz";
+const SMTP_PORT = 465;
 
 export async function sendContactMessage(
   _previousState: ContactFormState,
@@ -33,34 +37,26 @@ export async function sendContactMessage(
 }
 
 async function sendEmail(values: ContactFormValues) {
-  const { RESEND_API_KEY, CONTACT_FORM_FROM, CONTACT_FORM_TO } = process.env;
+  const { SMTP_USER, SMTP_PASSWORD, CONTACT_FORM_TO } = process.env;
 
-  if (!RESEND_API_KEY || !CONTACT_FORM_FROM || !CONTACT_FORM_TO) {
-    throw new Error(
-      "Missing RESEND_API_KEY, CONTACT_FORM_FROM or CONTACT_FORM_TO",
-    );
+  if (!SMTP_USER || !SMTP_PASSWORD || !CONTACT_FORM_TO) {
+    throw new Error("Missing SMTP_USER, SMTP_PASSWORD or CONTACT_FORM_TO");
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${RESEND_API_KEY}`,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      from: CONTACT_FORM_FROM,
-      to: CONTACT_FORM_TO,
-      reply_to: values.email,
-      subject: `Nová zpráva z webu – ${values.name}`,
-      text: formatEmailText(values),
-    }),
+  const transporter = nodemailer.createTransport({
+    host: SMTP_HOST,
+    port: SMTP_PORT,
+    secure: true,
+    auth: { user: SMTP_USER, pass: SMTP_PASSWORD },
   });
 
-  if (!response.ok) {
-    throw new Error(
-      `Resend responded with ${response.status}: ${await response.text()}`,
-    );
-  }
+  await transporter.sendMail({
+    from: SMTP_USER,
+    to: CONTACT_FORM_TO,
+    replyTo: values.email,
+    subject: `Nová zpráva z webu – ${values.name}`,
+    text: formatEmailText(values),
+  });
 }
 
 function formatEmailText(values: ContactFormValues) {

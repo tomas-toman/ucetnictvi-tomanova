@@ -1,3 +1,4 @@
+import RevealObserver from "@/components/RevealObserver";
 import Contact from "@/modules/contact/Contact";
 import Hero from "@/modules/hero/Hero";
 import PriceList from "@/modules/price-list/PriceList";
@@ -10,6 +11,7 @@ export default function Home() {
       <Services />
       <PriceList />
       <Contact />
+      <RevealObserver />
     </>
   );
 }
