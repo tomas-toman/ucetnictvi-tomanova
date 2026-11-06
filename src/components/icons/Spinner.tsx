@@ -17,7 +17,12 @@ export default function Spinner(props: SVGProps<SVGSVGElement>) {
         strokeWidth="4"
         opacity="0.25"
       />
-      <path d="M12 2a10 10 0 0 1 10 10h-4a6 6 0 0 0-6-6V2Z" />
+      <path
+        d="M12 2a10 10 0 0 1 10 10"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="4"
+      />
     </svg>
   );
 }

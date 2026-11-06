@@ -46,7 +46,10 @@ const VARIANT_STYLES: Record<ButtonVariant, string> = {
     "bg-lapis text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-lapis),black_10%)] active:bg-[color-mix(in_oklab,var(--color-lapis),black_15%)] focus:outline-lapis",
 };
 
-const EXTERNAL_HREF = /^(?:[a-z][a-z\d+\-.]*:|\/\/)/i;
+const STACKED_LABEL_STYLE =
+  "col-start-1 row-start-1 inline-flex items-center gap-2";
+
+const EXTERNAL_HREF =/^(?:[a-z][a-z\d+\-.]*:|\/\/)/i;
 
 export default function Button(props: ButtonProps) {
   const {
@@ -59,13 +62,20 @@ export default function Button(props: ButtonProps) {
     "aria-label": ariaLabel,
   } = props;
 
-  const content = isLoading ? (
-    <span className="inline-flex items-center gap-2">
-      <Spinner
-        aria-hidden="true"
-        className="size-4 animate-spin fill-base-secondary text-white"
-      />
-      {loadingText ?? children}
+  const hasLoadingState = isLoading || loadingText !== undefined;
+
+  const content = hasLoadingState ? (
+    <span className="grid items-center justify-items-center">
+      <span className={cn(STACKED_LABEL_STYLE, isLoading && "invisible")}>
+        {children}
+      </span>
+      <span className={cn(STACKED_LABEL_STYLE, !isLoading && "invisible")}>
+        <Spinner
+          aria-hidden="true"
+          className="size-4 animate-spin text-white"
+        />
+        {loadingText ?? children}
+      </span>
     </span>
   ) : (
     children
