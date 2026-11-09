@@ -1,13 +1,8 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
+import { roboto } from "@/lib/fonts";
 import Header from "@/modules/header/Header";
 import Footer from "@/modules/footer/Footer";
-
-const roboto = Roboto({
-  subsets: ["latin", "latin-ext"],
-  variable: "--font-roboto",
-});
 
 export const metadata: Metadata = {
   title: "Účetnictví Václava Malá Tomanová",

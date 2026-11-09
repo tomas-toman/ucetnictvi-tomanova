@@ -150,7 +150,7 @@ export default function ContactForm() {
             Vaše údaje použiji pouze k&nbsp;vyřízení vaší zprávy. Více v{" "}
             <Link
               href="/zasady-ochrany-osobnich-udaju"
-              className="underline underline-offset-2 transition-colors hover:text-teal"
+              className="underline underline-offset-2 transition-colors hover:text-teal rounded-md"
             >
               zásadách ochrany osobních údajů
             </Link>

@@ -14,11 +14,12 @@ export default function Hero() {
         fill
         preload
         sizes="100vw"
-        className="-z-10 object-cover object-[left_93%] motion-safe:animate-hero-zoom"
+        draggable={false}
+        className="-z-10 select-none object-cover object-[left_93%] motion-safe:animate-hero-zoom"
       />
 
       {/* White gradient overlay */}
-      <div className="-z-10 pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_95%_95%_at_40%_0%,transparent_0%,var(--color-ghost-white)_100%)]" />
+      <div className="-z-10 pointer-events-none select-none absolute inset-0 bg-[radial-gradient(ellipse_95%_95%_at_40%_0%,transparent_0%,var(--color-ghost-white)_100%)]" />
 
       <div
         data-intro="children"

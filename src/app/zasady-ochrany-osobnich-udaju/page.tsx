@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import RevealObserver from "@/components/RevealObserver";
 import PrivacyPolicy from "@/modules/privacy-policy/PrivacyPolicy";
 
 export const metadata: Metadata = {
@@ -8,5 +9,10 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
-  return <PrivacyPolicy />;
+  return (
+    <>
+      <PrivacyPolicy />
+      <RevealObserver />
+    </>
+  );
 }

@@ -37,6 +37,6 @@
   [data-reveal="self"][data-revealed],
   [data-reveal="children"][data-revealed] > * {
     animation: fade-up 0.9s var(--ease-out-expo)
-      calc(var(--stagger, 0) * 100ms) backwards;
+      calc((var(--reveal-order, 0) + var(--stagger, 0)) * 100ms) backwards;
   }
 }

@@ -8,7 +8,7 @@ const LINK_STYLE =
 
 function Section({ title, children }: { title: string; children: ReactNode }) {
   return (
-    <section className="flex flex-col gap-3">
+    <section data-reveal="self" className="flex flex-col gap-3">
       <h2 className="text-xl font-medium text-charcoal">{title}</h2>
       {children}
     </section>
@@ -29,16 +29,19 @@ function EmailLink() {
 
 export default function PrivacyPolicy() {
   return (
-    <article className="mx-auto max-w-200 px-4 py-10">
+    <article data-intro="children" className="mx-auto max-w-200 px-4 py-10">
       <div className="flex flex-col gap-8 rounded-md border border-dim-gray/20 bg-white p-8 leading-relaxed text-dim-gray shadow-sm md:p-10">
         <header className="flex flex-col gap-3">
-          <span className="text-sm font-bold uppercase tracking-wider text-teal">
+          <span
+            data-reveal="self"
+            className="text-sm font-bold uppercase tracking-wider text-teal"
+          >
             Právní informace
           </span>
-          <h1 className="text-3xl font-medium text-charcoal">
+          <h1 data-reveal="self" className="text-3xl font-medium text-charcoal">
             Zásady ochrany osobních údajů
           </h1>
-          <p>
+          <p data-reveal="self">
             Tyto zásady popisují, jak zpracovávám osobní údaje při návštěvě
             tohoto webu a&nbsp;při použití kontaktního formuláře, a&nbsp;jaká
             máte v&nbsp;souvislosti s&nbsp;tím práva podle nařízení Evropského
@@ -203,7 +206,7 @@ export default function PrivacyPolicy() {
           </p>
         </Section>
 
-        <p className="border-t border-dim-gray/20 pt-6 text-sm">
+        <p data-reveal="self" className="border-t border-dim-gray/20 pt-6 text-sm">
           Tyto zásady jsou účinné od {EFFECTIVE_DATE}.
         </p>
       </div>

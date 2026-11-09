@@ -8,7 +8,7 @@ import {
   ReactNode,
 } from "react";
 
-type ButtonVariant = "primary";
+type ButtonVariant = "primary" | "secondary";
 
 interface ButtonBaseProps {
   children: ReactNode;
@@ -44,6 +44,8 @@ const BASE_STYLE =
 const VARIANT_STYLES: Record<ButtonVariant, string> = {
   primary:
     "bg-lapis text-ghost-white hover:bg-[color-mix(in_oklab,var(--color-lapis),black_10%)] active:bg-[color-mix(in_oklab,var(--color-lapis),black_15%)] focus:outline-lapis",
+  secondary:
+    "bg-teal/10 text-teal hover:bg-teal/20 active:bg-teal/25 focus:outline-teal",
 };
 
 const STACKED_LABEL_STYLE =

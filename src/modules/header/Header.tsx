@@ -33,7 +33,7 @@ export default function Header() {
         <Link
           href="/"
           onClick={handleLogoClick}
-          className="flex items-center justify-center gap-3 rounded-md lg:justify-self-start text-[clamp(14px,4vw,20px)]"
+          className="flex items-center justify-center gap-3 rounded-md select-none lg:justify-self-start text-[clamp(14px,4vw,20px)]"
         >
           <Logo className="h-auto w-[3em]" />
 

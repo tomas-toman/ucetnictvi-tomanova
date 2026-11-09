@@ -6,11 +6,15 @@ export default function RevealObserver() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        for (const entry of entries) {
-          if (!entry.isIntersecting) continue;
-          entry.target.setAttribute("data-revealed", "");
-          observer.unobserve(entry.target);
-        }
+        entries
+          .filter((entry) => entry.isIntersecting)
+          .forEach(({ target }, order) => {
+            if (target instanceof HTMLElement) {
+              target.style.setProperty("--reveal-order", String(order));
+            }
+            target.setAttribute("data-revealed", "");
+            observer.unobserve(target);
+          });
       },
       { rootMargin: "0px 0px -10% 0px" },
     );

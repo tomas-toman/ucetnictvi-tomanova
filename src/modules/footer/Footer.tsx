@@ -56,7 +56,7 @@ export default function Footer() {
                 <li key={href}>
                   <Link
                     href={href}
-                    className="transition-colors hover:text-ghost-white/70"
+                    className="transition-colors hover:text-ghost-white/70 rounded-md focus:outline-white"
                   >
                     {label}
                   </Link>
@@ -76,7 +76,7 @@ export default function Footer() {
               href="https://www.instagram.com/_tomastoman/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-white transition-colors"
+              className="hover:text-white transition-colors rounded-md focus:outline-white"
             >
               @_tomastoman
             </a>
