@@ -104,12 +104,12 @@ export default function Footer() {
           <p className="flex items-center gap-1 text-white/50">
             Vytvořil{" "}
             <a
-              href="https://www.instagram.com/_tomastoman/"
+              href="https://www.linkedin.com/in/tomastoman/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition-colors rounded-md focus:outline-white"
             >
-              @_tomastoman
+              Tomáš Toman
             </a>
           </p>
         </div>
