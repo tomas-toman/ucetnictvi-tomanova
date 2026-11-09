@@ -4,7 +4,6 @@ import LogoOutline from "@/components/icons/LogoOutline";
 import WhatsApp from "@/components/icons/WhatsApp";
 import { PRIVACY_POLICY_PATH } from "@/lib/site";
 import { CONTACT_DETAILS } from "@/modules/contact/contactDetails";
-import { NAV_LINKS } from "@/modules/header/navLinks";
 
 const CONTACT_LINKS = [
   ...CONTACT_DETAILS.map(({ label, href, Icon }) => ({ label, href, Icon })),
@@ -16,7 +15,9 @@ const CONTACT_LINKS = [
 ];
 
 const FOOTER_LINKS = [
-  ...NAV_LINKS,
+  { label: "Přehled služeb", href: "/#sluzby" },
+  { label: "Ceník služeb", href: "/#cenik" },
+  { label: "Kontaktní formulář", href: "/#kontakt" },
   {
     label: "Zásady ochrany osobních údajů",
     href: PRIVACY_POLICY_PATH,
@@ -56,7 +57,6 @@ export default function Footer() {
                 <li key={label}>
                   <a
                     href={href}
-                    aria-label={label}
                     title={label}
                     {...(href.startsWith("http") && {
                       target: "_blank",
@@ -65,6 +65,7 @@ export default function Footer() {
                     className="flex rounded-full bg-white/10 p-2.5 transition-colors hover:bg-white hover:text-lapis focus:outline-white"
                   >
                     <Icon className="size-5" />
+                    <span className="sr-only">{label}</span>
                   </a>
                 </li>
               ))}
