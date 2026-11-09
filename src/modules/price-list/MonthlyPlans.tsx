@@ -1,4 +1,5 @@
 import Item from "./Item";
+import { MONTHLY_PLANS } from "./plans";
 
 export default function MonthlyPlans() {
   return (
@@ -14,34 +15,9 @@ export default function MonthlyPlans() {
         data-reveal="children"
         className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-6"
       >
-        <Item
-          title="Malý neplátce DPH (OSVČ)"
-          price={2000}
-          description="Pro začínající podnikatle a OSVČ s pár fakturami"
-          features={["Do 30 dokladů měsíčně", "Základní daňová evidence"]}
-        />
-        <Item
-          title="Střední plátce DPH (s.r.o.)"
-          price={6000}
-          isRecommended
-          description="Ideální pro menší e-shopy a poskytovatele služeb"
-          features={[
-            "Do 100 dokladů měsíčně",
-            "Kontrolní a souhrnné hlášení",
-            "Zpracování bankovních výpisů",
-          ]}
-        />
-        <Item
-          title="Větší firma / Aktivní e-shop"
-          price={20000}
-          isStartingPrice
-          description="Pro firmy s větším objemem dat a automatizací"
-          features={[
-            "Do 600 dokladů měsíčně",
-            "Automatizované importy (API)",
-            "Drobná mzdová agenda",
-          ]}
-        />
+        {MONTHLY_PLANS.map((plan) => (
+          <Item key={plan.title} {...plan} />
+        ))}
       </ul>
 
       <p

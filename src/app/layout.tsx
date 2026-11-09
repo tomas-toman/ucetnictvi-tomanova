@@ -1,12 +1,29 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { roboto } from "@/lib/fonts";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 import Header from "@/modules/header/Header";
 import Footer from "@/modules/footer/Footer";
 
 export const metadata: Metadata = {
-  title: "Účetnictví Václava Malá Tomanová",
-  description: "",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `Účetní Litoměřice | ${SITE_NAME}`,
+    template: `%s | ${SITE_NAME}`,
+  },
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    type: "website",
+    locale: "cs_CZ",
+    siteName: SITE_NAME,
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#1f7f74",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -1,17 +1,6 @@
-import { ComponentType, SVGProps } from "react";
+import type { Rate, RateGroup } from "./rateGroups";
 
-type Rate = {
-  Icon: ComponentType<SVGProps<SVGSVGElement>>;
-  label: string;
-  price: number | [number, number];
-  unit?: string;
-  note?: string;
-};
-
-type RateCardProps = {
-  title: string;
-  rates: Rate[];
-};
+type RateCardProps = RateGroup;
 
 const priceFormatter = new Intl.NumberFormat("cs-CZ");
 

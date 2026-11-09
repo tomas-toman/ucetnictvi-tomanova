@@ -1,17 +1,18 @@
 import Mail from "@/components/icons/Mail";
 import Phone from "@/components/icons/Phone";
+import { CONTACT_EMAIL, CONTACT_PHONE } from "@/lib/site";
 
 export const CONTACT_DETAILS = [
   {
     label: "Telefon",
-    value: "+420 774 058 618",
-    href: "tel:+420774058618",
+    value: CONTACT_PHONE,
+    href: `tel:${CONTACT_PHONE.replaceAll(" ", "")}`,
     Icon: Phone,
   },
   {
     label: "E-mail",
-    value: "info@ucetnictvi-tomanova.cz",
-    href: "mailto:info@ucetnictvi-tomanova.cz",
+    value: CONTACT_EMAIL,
+    href: `mailto:${CONTACT_EMAIL}`,
     Icon: Mail,
   },
 ];

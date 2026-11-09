@@ -18,7 +18,7 @@ export default function Services() {
         >
           <Item
             Icon={Calculator}
-            title="Učetnictví"
+            title="Účetnictví"
             description="Komplexní vedení účetnictví pro firmy i OSVČ."
           />
           <Item

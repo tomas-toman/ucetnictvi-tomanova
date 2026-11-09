@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
+import { CONTACT_EMAIL } from "@/lib/site";
 
-const CONTACT_EMAIL = "info@ucetnictvi-tomanova.cz";
 const EFFECTIVE_DATE = "9. 11. 2026";
 
 const LINK_STYLE =

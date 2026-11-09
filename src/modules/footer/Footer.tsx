@@ -1,13 +1,25 @@
 import { cacheLife } from "next/cache";
 import Link from "next/link";
 import LogoOutline from "@/components/icons/LogoOutline";
+import WhatsApp from "@/components/icons/WhatsApp";
+import { PRIVACY_POLICY_PATH } from "@/lib/site";
+import { CONTACT_DETAILS } from "@/modules/contact/contactDetails";
 import { NAV_LINKS } from "@/modules/header/navLinks";
+
+const CONTACT_LINKS = [
+  ...CONTACT_DETAILS.map(({ label, href, Icon }) => ({ label, href, Icon })),
+  {
+    label: "WhatsApp",
+    href: "https://wa.me/420774058618",
+    Icon: WhatsApp,
+  },
+];
 
 const FOOTER_LINKS = [
   ...NAV_LINKS,
   {
     label: "Zásady ochrany osobních údajů",
-    href: "/zasady-ochrany-osobnich-udaju",
+    href: PRIVACY_POLICY_PATH,
   },
 ];
 
@@ -37,8 +49,26 @@ export default function Footer() {
             </p>
           </div>
 
-          <div className="order-first flex justify-center md:order-0 md:self-center">
+          <div className="order-first flex flex-col items-center gap-5 md:order-0 md:self-center">
             <LogoOutline className="h-14 w-auto" />
+            <ul className="flex items-center gap-3">
+              {CONTACT_LINKS.map(({ label, href, Icon }) => (
+                <li key={label}>
+                  <a
+                    href={href}
+                    aria-label={label}
+                    title={label}
+                    {...(href.startsWith("http") && {
+                      target: "_blank",
+                      rel: "noopener noreferrer",
+                    })}
+                    className="flex rounded-full bg-white/10 p-2.5 transition-colors hover:bg-white hover:text-lapis focus:outline-white"
+                  >
+                    <Icon className="size-5" />
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
 
           <nav

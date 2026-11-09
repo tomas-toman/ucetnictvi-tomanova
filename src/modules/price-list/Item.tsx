@@ -1,15 +1,9 @@
 import Button from "@/components/Button";
 import Check from "@/components/icons/Check";
 import { cn } from "@/lib/cn";
+import type { MonthlyPlan } from "./plans";
 
-type ItemProps = {
-  title: string;
-  price: number;
-  isStartingPrice?: boolean;
-  isRecommended?: boolean;
-  description: string;
-  features: string[];
-};
+type ItemProps = MonthlyPlan;
 
 const priceFormatter = new Intl.NumberFormat("cs-CZ");
 
