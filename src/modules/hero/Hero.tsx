@@ -10,7 +10,7 @@ export default function Hero() {
     >
       <Image
         src="/images/HeroBackground.webp"
-        alt=""
+        alt="Pracovní stůl s kalkulačkou, notebookem a zápisníkem"
         fill
         preload
         sizes="100vw"

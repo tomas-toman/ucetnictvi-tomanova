@@ -53,7 +53,7 @@ export default function Item({
       </ul>
 
       <Button href="#kontakt" fullWidth className="mt-auto justify-center">
-        Mám zájem
+        Mám zájem<span className="sr-only"> o tarif {title}</span>
       </Button>
     </li>
   );

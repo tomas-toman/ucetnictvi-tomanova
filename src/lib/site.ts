@@ -1,4 +1,4 @@
-export const SITE_URL = "https://ucetnictvi-tomanova.cz";
+export const SITE_URL = "https://www.ucetnictvi-tomanova.cz";
 
 export const OWNER_NAME = "Václava Malá Tomanová";
 

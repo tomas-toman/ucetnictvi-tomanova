@@ -46,7 +46,7 @@ export default function OpenGraphImage() {
           padding: "0 88px",
         }}
       >
-        <img src={logoSrc} width={300} height={215} alt="" />
+        <img src={logoSrc} width={300} height={215} alt="Logo" />
 
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
@@ -80,8 +80,8 @@ export default function OpenGraphImage() {
               color: COLORS.dimGray,
             }}
           >
-            Účetnictví, daňová evidence, DPH a mzdy pro OSVČ, firmy
-            i neziskové organizace.
+            Účetnictví, daňová evidence, DPH a mzdy pro OSVČ, firmy i neziskové
+            organizace.
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@ export default function OpenGraphImage() {
           backgroundImage: `linear-gradient(to right, ${COLORS.teal}, ${COLORS.lapis})`,
         }}
       >
-        {new URL(SITE_URL).host}
+        {new URL(SITE_URL).host.replace(/^www\./, "")}
       </div>
     </div>,
     {
