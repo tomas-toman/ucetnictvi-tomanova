@@ -14,6 +14,10 @@ import { RATE_GROUPS } from "@/modules/price-list/rateGroups";
 const BUSINESS_NODE_ID = `${SITE_URL}/#business`;
 const WEBSITE_NODE_ID = `${SITE_URL}/#website`;
 
+const priceFormatter = new Intl.NumberFormat("cs-CZ");
+const lowestMonthlyPrice = Math.min(...MONTHLY_PLANS.map(({ price }) => price));
+const PRICE_RANGE = `od ${priceFormatter.format(lowestMonthlyPrice)} Kč / měsíc`;
+
 type PriceOptions = {
   price: number | [number, number];
   isStartingPrice?: boolean;
@@ -105,6 +109,7 @@ export const HOME_STRUCTURED_DATA = {
         value: BUSINESS_REGISTRATION_NUMBER,
       },
       currenciesAccepted: "CZK",
+      priceRange: PRICE_RANGE,
       hasOfferCatalog: {
         "@type": "OfferCatalog",
         name: "Ceník účetních služeb",
