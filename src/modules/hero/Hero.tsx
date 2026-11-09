@@ -32,7 +32,8 @@ export default function Hero() {
           Spolehlivé účetnictví pro vaše podnikání
         </h1>
         <p className="text-dim-gray max-w-90 my-4">
-          Třicet let praxe, individuální přístup a pečlivost v každém detailu.
+          Třicet let praxe, spolehlivé zpracování, individuální přístup a
+          pečlivost v každém detailu.
           Pomohu Vám mít účetnictví pod kontrolou, ať už jste OSVČ, menší firma
           nebo nezisková organizace.
         </p>
