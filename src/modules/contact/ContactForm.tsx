@@ -4,6 +4,7 @@ import Button from "@/components/Button";
 import ArrowRight from "@/components/icons/ArrowRight";
 import Check from "@/components/icons/Check";
 import { cn } from "@/lib/cn";
+import Link from "next/link";
 import { useActionState, useState } from "react";
 import { sendContactMessage } from "./actions";
 import {
@@ -146,7 +147,14 @@ export default function ContactForm() {
 
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
           <p className="text-xs text-dim-gray">
-            Vaše údaje použiji pouze k odpovědi na tuto zprávu.
+            Vaše údaje použiji pouze k&nbsp;vyřízení vaší zprávy. Více v{" "}
+            <Link
+              href="/zasady-ochrany-osobnich-udaju"
+              className="underline underline-offset-2 transition-colors hover:text-teal"
+            >
+              zásadách ochrany osobních údajů
+            </Link>
+            .
           </p>
           <Button
             type="submit"

@@ -8,7 +8,8 @@ import Mail from "@/components/icons/Mail";
 import Menu from "@/components/icons/Menu";
 import X from "@/components/icons/X";
 import NavLink from "./NavLink";
-import Image from "next/image";
+import { NAV_LINKS } from "./navLinks";
+import Logo from "@/components/icons/Logo";
 
 const DROPDOWN_ID = "main-dropdown";
 
@@ -16,7 +17,10 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  const closeMenu = () => setIsOpen(false);
+
   const handleLogoClick = (event: MouseEvent<HTMLAnchorElement>) => {
+    closeMenu();
     if (pathname !== "/") return;
     event.preventDefault();
     window.history.replaceState(null, "", "/");
@@ -24,20 +28,14 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-ghost-white sticky top-0 z-50 shadow-sm">
-      <div className="relative bg-ghost-white max-w-300 h-header mx-auto flex flex-row justify-between items-center px-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
+    <header className="bg-white sticky top-0 z-50 shadow-sm">
+      <div className="relative bg-white max-w-300 h-header mx-auto flex flex-row justify-between items-center px-4 lg:grid lg:grid-cols-[1fr_auto_1fr]">
         <Link
           href="/"
           onClick={handleLogoClick}
           className="flex items-center justify-center gap-3 rounded-md lg:justify-self-start text-[clamp(14px,4vw,20px)]"
         >
-          <Image
-            src="/images/Logo.svg"
-            alt="Logo"
-            height={43}
-            width={60}
-            className="h-auto w-[3em]"
-          />
+          <Logo className="h-auto w-[3em]" />
 
           <span className="leading-none flex flex-col">
             Václava Malá Tomanová
@@ -83,12 +81,21 @@ export default function Header() {
             aria-label="Hlavní menu"
             className="flex flex-col divide-y divide-gray-200 p-4 rounded-md mb-2 bg-ghost-white shadow-lg lg:flex-row lg:gap-8 lg:divide-y-0 lg:p-0 lg:mb-0 lg:bg-transparent lg:shadow-none"
           >
-            <NavLink label="Služby" href="#sluzby" />
-            <NavLink label="Ceník" href="#cenik" />
-            <NavLink label="Kontakt" href="#kontakt" />
+            {NAV_LINKS.map(({ label, href }) => (
+              <NavLink
+                key={href}
+                label={label}
+                href={href}
+                onClick={closeMenu}
+              />
+            ))}
           </nav>
 
-          <Button href="#kontakt" className="mx-auto lg:mx-0 lg:justify-self-end shadow-lg">
+          <Button
+            href="/#kontakt"
+            onClick={closeMenu}
+            className="mx-auto lg:mx-0 lg:justify-self-end shadow-lg"
+          >
             <Mail />
             Kontaktujte mě
           </Button>

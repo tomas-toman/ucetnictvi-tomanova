@@ -12,7 +12,7 @@ export default function MonthlyPlans() {
 
       <ul
         data-reveal="children"
-        className="grid grid-cols-[repeat(auto-fit,minmax(16rem,1fr))] gap-6"
+        className="grid grid-cols-[repeat(auto-fit,minmax(min(16rem,100%),1fr))] gap-6"
       >
         <Item
           title="Malý neplátce DPH (OSVČ)"
