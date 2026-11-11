@@ -19,27 +19,27 @@ export default function Services() {
           <Item
             Icon={Calculator}
             title="Účetnictví"
-            description="Komplexní vedení účetnictví pro firmy i OSVČ."
+            description="Komplexní vedení účetnictví pro firmy i OSVČ. Zajistím průběžné účtování, roční závěrku i přiznání k dani z příjmů."
           />
           <Item
             Icon={File}
             title="Daňová evidence"
-            description="Přehledné zpracování daňové evidence a evidence příjmů a výdajů."
+            description="Přehledné zpracování daňové evidence a evidence příjmů a výdajů. Na konci roku z ní připravím daňové přiznání."
           />
           <Item
             Icon={Percentage}
             title="DPH"
-            description="Příprava a podání daňových přiznání, kontrolní hlášení, souhrnné hlášení."
+            description="Příprava a podání daňových přiznání, kontrolní hlášení, souhrnné hlášení. Pohlídám všechny termíny, abyste se vyhnuli pokutám a penále."
           />
           <Item
             Icon={Bitcoin}
             title="Kryptoměny"
-            description="Zpracování a účtování transakcí na kryptoměnových burzách."
+            description="Zpracování a účtování transakcí z kryptoměnových burz a peněženek. Pomohu i se správným zdaněním příjmů z prodeje kryptoměn."
           />
           <Item
             Icon={People}
             title="Neziskové organizace"
-            description="Zkušenosti s účetnictvím veřejného sektoru."
+            description="Účetnictví spolků, nadací a dalších neziskových organizací včetně roční závěrky a vyúčtování dotací. Zkušenosti mám i s účetnictvím veřejného sektoru."
           />
         </ul>
       </div>

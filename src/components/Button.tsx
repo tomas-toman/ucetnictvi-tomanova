@@ -1,6 +1,6 @@
 import { cn } from "@/lib/cn";
 import Spinner from "@/components/icons/Spinner";
-import Link from "next/link";
+import HashLink from "@/components/HashLink";
 import {
   ButtonHTMLAttributes,
   ElementType,
@@ -96,7 +96,7 @@ export default function Button(props: ButtonProps) {
   if (props.href !== undefined) {
     const isNativeAnchor =
       EXTERNAL_HREF.test(props.href) || props.href.startsWith("#");
-    const Component: ElementType = isNativeAnchor ? "a" : Link;
+    const Component: ElementType = isNativeAnchor ? "a" : HashLink;
 
     return (
       <Component

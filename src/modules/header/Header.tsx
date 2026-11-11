@@ -79,7 +79,7 @@ export default function Header() {
         >
           <nav
             aria-label="Hlavní menu"
-            className="flex flex-col divide-y divide-gray-200 p-4 rounded-md mb-2 bg-ghost-white shadow-lg lg:flex-row lg:gap-8 lg:divide-y-0 lg:p-0 lg:mb-0 lg:bg-transparent lg:shadow-none"
+            className="flex flex-col divide-y divide-gray-200 p-4 rounded-md mb-2 bg-ghost-white shadow-lg lg:flex-row gap-5 lg:divide-y-0 lg:p-0 lg:mb-0 lg:bg-transparent lg:shadow-none"
           >
             {NAV_LINKS.map(({ label, href }) => (
               <NavLink

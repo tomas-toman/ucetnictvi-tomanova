@@ -1,5 +1,5 @@
 import { cacheLife } from "next/cache";
-import Link from "next/link";
+import HashLink from "@/components/HashLink";
 import LogoOutline from "@/components/icons/LogoOutline";
 import WhatsApp from "@/components/icons/WhatsApp";
 import { PRIVACY_POLICY_PATH } from "@/lib/site";
@@ -19,6 +19,7 @@ const FOOTER_LINKS = [
   { label: "Přehled služeb", href: "/#sluzby" },
   { label: "Ceník služeb", href: "/#cenik" },
   { label: "Kontaktní formulář", href: "/#kontakt" },
+  { label: "Odpovědi na časté dotazy", href: "/#caste-dotazy" },
   {
     label: "Zásady ochrany osobních údajů",
     href: PRIVACY_POLICY_PATH,
@@ -33,8 +34,8 @@ async function CurrentYear() {
 
 export default function Footer() {
   return (
-    <footer className="bg-lapis px-4 text-white">
-      <div className="mx-auto max-w-300">
+    <footer className="bg-lapis text-white">
+      <div className="mx-auto max-w-300 px-4">
         <div className="grid gap-10 py-10 md:grid-cols-3 md:items-start">
           <div className="order-last flex flex-col gap-3 md:order-0">
             <h2 className="text-sm font-semibold uppercase tracking-wide text-ghost-white/60">
@@ -86,12 +87,12 @@ export default function Footer() {
             <ul className="flex flex-col gap-2">
               {FOOTER_LINKS.map(({ label, href }) => (
                 <li key={href}>
-                  <Link
+                  <HashLink
                     href={href}
                     className="transition-colors hover:text-ghost-white/70 rounded-md focus:outline-white"
                   >
                     {label}
-                  </Link>
+                  </HashLink>
                 </li>
               ))}
             </ul>
