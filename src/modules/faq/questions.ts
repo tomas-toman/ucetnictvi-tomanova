@@ -12,12 +12,12 @@ export const QUESTIONS: Question[] = [
   {
     question: "Jak probíhá předávání dokladů?",
     answer:
-      "Doklady mi můžete předat osobně v Litoměřicích, poslat e-mailem nebo sdílet přes cloudové úložiště. Nejjednodušší je posílat je průběžně, ideálně jednou měsíčně spolu s bankovními výpisy. Pokud Vaše banka nebo fakturační systém umí export dat, můžeme import nastavit automaticky.",
+      "Doklady mi můžete předat osobně v Litoměřicích, poslat e-mailem nebo sdílet přes cloudové úložiště. Nejjednodušší je posílat je průběžně, ideálně nejpozději na začátek následujícího měsíce zpracovávaného období spolu s bankovními výpisy. Pokud Vaše banka nebo fakturační systém umí export dat, můžeme import nastavit automaticky.",
   },
   {
     question: "Převezmete účetnictví v průběhu roku nebo po jiné účetní?",
     answer:
-      "Ano. Na začátku projdu dosavadní účetnictví, zkontroluji zůstatky a navážu na předchozí období. Pokud při kontrole najdu chyby, domluvíme se na jejich opravě. Rozsáhlejší nápravu účtuji jako rekonstrukci účetnictví podle hodinové sazby v ceníku.",
+      "Ano. Na začátku projdu dosavadní účetnictví, zkontroluji zůstatky a navážu na předchozí období. Pokud při kontrole najdu nesrovnalosti, domluvíme se na jejich opravě. Rozsáhlejší nápravu účtuji jako rekonstrukci účetnictví podle hodinové sazby v ceníku.",
   },
   {
     question: "Pracujete i s klienty mimo Litoměřice?",

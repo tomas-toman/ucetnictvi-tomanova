@@ -7,6 +7,7 @@ import Faq from "@/modules/faq/Faq";
 import Hero from "@/modules/hero/Hero";
 import PriceList from "@/modules/price-list/PriceList";
 import Services from "@/modules/services/Services";
+import Share from "@/modules/share/Share";
 import About from "@/modules/about/About";
 
 export const metadata: Metadata = {
@@ -25,6 +26,7 @@ export default function Home() {
       <PriceList />
       <Contact />
       <Faq />
+      <Share />
       <RevealObserver />
     </>
   );
