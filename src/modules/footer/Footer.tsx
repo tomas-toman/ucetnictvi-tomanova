@@ -38,9 +38,9 @@ export default function Footer() {
       <div className="mx-auto max-w-300 px-4">
         <div className="grid gap-10 py-10 md:grid-cols-3 md:items-start">
           <div className="order-last flex flex-col gap-3 md:order-0">
-            <h2 className="text-sm font-semibold uppercase tracking-wide text-ghost-white/60">
+            <p className="text-sm font-semibold uppercase tracking-wide text-ghost-white/60">
               Fakturační údaje
-            </h2>
+            </p>
             <address className="flex flex-col gap-1 not-italic">
               <span className="font-semibold">Václava Malá Tomanová</span>
               <span>Sídlo: Alfonse Muchy 416/19, 412&nbsp;01 Litoměřice</span>
@@ -78,12 +78,12 @@ export default function Footer() {
             aria-labelledby="footer-links-heading"
             className="flex flex-col gap-3 md:justify-self-end"
           >
-            <h2
+            <p
               id="footer-links-heading"
               className="text-sm font-semibold uppercase tracking-wide text-ghost-white/60"
             >
               Odkazy
-            </h2>
+            </p>
             <ul className="flex flex-col gap-2">
               {FOOTER_LINKS.map(({ label, href }) => (
                 <li key={href}>

@@ -17,7 +17,7 @@ export default function Faq() {
               className="group rounded-md border border-dim-gray/20 bg-white shadow-sm transition-shadow duration-300 open:shadow-md"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between gap-4 rounded-md p-5 text-lg font-medium text-charcoal transition-colors hover:text-teal md:p-6 [&::-webkit-details-marker]:hidden">
-                <h3>{question}</h3>
+                <span>{question}</span>
                 <ChevronDown className="size-6 shrink-0 text-teal transition-transform duration-400 ease-out-quart group-open:rotate-180" />
               </summary>
               <div data-details-panel>
