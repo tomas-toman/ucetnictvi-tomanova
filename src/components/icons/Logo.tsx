@@ -8,7 +8,7 @@ export default function Logo(props: SVGProps<SVGSVGElement>) {
     <svg
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="152 161 932 667"
+      viewBox="142 151 952 687"
       fillRule="evenodd"
       clipRule="evenodd"
       strokeMiterlimit={10}
