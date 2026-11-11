@@ -6,6 +6,7 @@ import Contact from "@/modules/contact/Contact";
 import Hero from "@/modules/hero/Hero";
 import PriceList from "@/modules/price-list/PriceList";
 import Services from "@/modules/services/Services";
+import About from "@/modules/about/About";
 
 export const metadata: Metadata = {
   alternates: {
@@ -18,6 +19,7 @@ export default function Home() {
     <>
       <JsonLd data={HOME_STRUCTURED_DATA} />
       <Hero />
+      <About />
       <Services />
       <PriceList />
       <Contact />

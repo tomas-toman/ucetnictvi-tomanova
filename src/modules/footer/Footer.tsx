@@ -15,6 +15,7 @@ const CONTACT_LINKS = [
 ];
 
 const FOOTER_LINKS = [
+  { label: "Něco o mně", href: "/#o-mne" },
   { label: "Přehled služeb", href: "/#sluzby" },
   { label: "Ceník služeb", href: "/#cenik" },
   { label: "Kontaktní formulář", href: "/#kontakt" },
