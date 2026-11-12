@@ -5,7 +5,13 @@ import ArrowRight from "@/components/icons/ArrowRight";
 import Check from "@/components/icons/Check";
 import { cn } from "@/lib/cn";
 import Link from "next/link";
-import { useActionState, useState } from "react";
+import {
+  ReactNode,
+  useActionState,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { sendContactMessage } from "./actions";
 import {
   ContactFormErrors,
@@ -15,6 +21,7 @@ import {
 } from "./schema";
 import Field, { errorProps, INPUT_STYLE } from "./Field";
 import SubjectTypeField from "./SubjectTypeField";
+import TurnstileWidget, { TurnstileHandle } from "./TurnstileWidget";
 
 const INITIAL_STATE: ContactFormState = { status: "idle" };
 
@@ -29,6 +36,13 @@ export default function ContactForm() {
   const values = "values" in state ? state.values : undefined;
   const errors: ContactFormErrors =
     state.status === "invalid" ? state.errors : {};
+  const turnstileRef = useRef<TurnstileHandle>(null);
+
+  useEffect(() => {
+    const isTokenConsumed =
+      state.status !== "idle" && state.status !== "invalid";
+    if (isTokenConsumed) turnstileRef.current?.reset();
+  }, [state]);
 
   return (
     <div className="relative h-full">
@@ -126,23 +140,26 @@ export default function ContactForm() {
           />
         </div>
 
+        <TurnstileWidget ref={turnstileRef} />
+
         {state.status === "failed" && (
-          <p
-            role="alert"
-            className="rounded-md bg-red-50 px-4 py-3 text-sm text-red-800 motion-safe:animate-fade-in"
-          >
+          <FormAlert>
             Zprávu se nepodařilo odeslat. Zkuste to prosím za chvíli znovu.
-          </p>
+          </FormAlert>
+        )}
+
+        {state.status === "unverified" && (
+          <FormAlert>
+            Nepodařilo se ověřit, že nejste robot. Počkejte prosím na dokončení
+            ověření a&nbsp;odešlete zprávu znovu.
+          </FormAlert>
         )}
 
         {state.status === "rate-limited" && (
-          <p
-            role="alert"
-            className="rounded-md bg-red-50 px-4 py-3 text-sm text-red-800 motion-safe:animate-fade-in"
-          >
+          <FormAlert>
             Momentálně nelze odeslat další zprávu. Zkuste to prosím později,
             nebo mi zavolejte.
-          </p>
+          </FormAlert>
         )}
 
         <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
@@ -171,6 +188,17 @@ export default function ContactForm() {
 
       {isSuccess && <SuccessMessage />}
     </div>
+  );
+}
+
+function FormAlert({ children }: { children: ReactNode }) {
+  return (
+    <p
+      role="alert"
+      className="rounded-md bg-red-50 px-4 py-3 text-sm text-red-800 motion-safe:animate-fade-in"
+    >
+      {children}
+    </p>
   );
 }
 

@@ -104,8 +104,9 @@ export default function PrivacyPolicy() {
               <span className="font-medium text-charcoal">
                 Ochrana formuláře před spamem a&nbsp;zneužitím
               </span>{" "}
-              – IP adresu zpracovávám na základě oprávněného zájmu na
-              zabezpečení webu (čl. 6 odst. 1 písm. f) GDPR).
+              – IP adresu a&nbsp;technické údaje o&nbsp;prohlížeči zpracovávám
+              na základě oprávněného zájmu na zabezpečení webu (čl. 6 odst. 1
+              písm. f) GDPR).
             </li>
             <li>
               <span className="font-medium text-charcoal">
@@ -157,11 +158,16 @@ export default function PrivacyPolicy() {
             <li>Vercel Inc. – hosting webu,</li>
             <li>
               Upstash, Inc. – technické omezení počtu odeslání formuláře (IP
-              adresa).
+              adresa),
+            </li>
+            <li>
+              Cloudflare, Inc. – ochrana formuláře před roboty službou Turnstile
+              (IP adresa a&nbsp;technické údaje o&nbsp;prohlížeči).
             </li>
           </List>
           <p>
-            Společnosti Vercel Inc. a&nbsp;Upstash, Inc. sídlí v&nbsp;USA.
+            Společnosti Vercel Inc., Upstash, Inc. a&nbsp;Cloudflare, Inc.
+            sídlí v&nbsp;USA.
             Předání údajů do USA probíhá na základě rozhodnutí Evropské komise
             o&nbsp;odpovídající úrovni ochrany (EU-US Data Privacy Framework),
             případně na základě standardních smluvních doložek schválených

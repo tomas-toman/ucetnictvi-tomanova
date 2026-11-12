@@ -9,6 +9,7 @@ import {
   readContactForm,
   validateContactForm,
 } from "./schema";
+import { isTurnstileTokenValid, TURNSTILE_RESPONSE_FIELD } from "./turnstile";
 
 const SMTP_HOST = "smtp.seznam.cz";
 const SMTP_PORT = 465;
@@ -26,6 +27,17 @@ export async function sendContactMessage(
 
   if (Object.keys(errors).length > 0) {
     return { status: "invalid", values, errors };
+  }
+
+  const turnstileToken = String(formData.get(TURNSTILE_RESPONSE_FIELD) ?? "");
+
+  try {
+    if (!(await isTurnstileTokenValid(turnstileToken))) {
+      return { status: "unverified", values };
+    }
+  } catch (error) {
+    console.error("Failed to verify Turnstile token", error);
+    return { status: "failed", values };
   }
 
   if (!(await isWithinContactRateLimit())) {

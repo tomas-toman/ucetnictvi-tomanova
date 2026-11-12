@@ -1,6 +1,6 @@
 import { Ratelimit } from "@upstash/ratelimit";
 import { Redis } from "@upstash/redis";
-import { headers } from "next/headers";
+import { getClientIp } from "./clientIp";
 
 const redis = Redis.fromEnv();
 
@@ -17,8 +17,7 @@ const globalLimiter = new Ratelimit({
 });
 
 export async function isWithinContactRateLimit() {
-  const requestHeaders = await headers();
-  const ip = requestHeaders.get("x-real-ip") ?? "unknown";
+  const ip = (await getClientIp()) ?? "unknown";
 
   try {
     const perIpResult = await perIpLimiter.limit(ip);

@@ -24,6 +24,7 @@ export type ContactFormState =
   | { status: "success" }
   | { status: "invalid"; values: ContactFormValues; errors: ContactFormErrors }
   | { status: "failed"; values: ContactFormValues }
+  | { status: "unverified"; values: ContactFormValues }
   | { status: "rate-limited"; values: ContactFormValues };
 
 const EMAIL_PATTERN = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
