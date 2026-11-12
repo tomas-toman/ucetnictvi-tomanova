@@ -1,7 +1,12 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { roboto } from "@/lib/fonts";
-import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
+import {
+  BASE_OPEN_GRAPH,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_URL,
+} from "@/lib/site";
 import Header from "@/modules/header/Header";
 import Footer from "@/modules/footer/Footer";
 
@@ -12,11 +17,7 @@ export const metadata: Metadata = {
     template: `%s | ${SITE_NAME}`,
   },
   description: SITE_DESCRIPTION,
-  openGraph: {
-    type: "website",
-    locale: "cs_CZ",
-    siteName: SITE_NAME,
-  },
+  openGraph: BASE_OPEN_GRAPH,
   twitter: {
     card: "summary_large_image",
   },

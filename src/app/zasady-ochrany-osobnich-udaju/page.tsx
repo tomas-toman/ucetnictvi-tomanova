@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import RevealObserver from "@/components/RevealObserver";
-import { PRIVACY_POLICY_PATH } from "@/lib/site";
+import { BASE_OPEN_GRAPH, PRIVACY_POLICY_PATH } from "@/lib/site";
 import PrivacyPolicy from "@/modules/privacy-policy/PrivacyPolicy";
 
 export const metadata: Metadata = {
@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     "Jak zpracovávám osobní údaje z kontaktního formuláře a jaká máte práva podle GDPR.",
   alternates: {
     canonical: PRIVACY_POLICY_PATH,
+  },
+  openGraph: {
+    ...BASE_OPEN_GRAPH,
+    url: PRIVACY_POLICY_PATH,
   },
 };
 

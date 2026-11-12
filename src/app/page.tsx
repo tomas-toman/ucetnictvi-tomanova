@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import JsonLd from "@/components/JsonLd";
 import RevealObserver from "@/components/RevealObserver";
+import { BASE_OPEN_GRAPH } from "@/lib/site";
 import { HOME_STRUCTURED_DATA } from "@/lib/structuredData";
 import Contact from "@/modules/contact/Contact";
 import Faq from "@/modules/faq/Faq";
@@ -13,6 +14,10 @@ import About from "@/modules/about/About";
 export const metadata: Metadata = {
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    ...BASE_OPEN_GRAPH,
+    url: "/",
   },
 };
 

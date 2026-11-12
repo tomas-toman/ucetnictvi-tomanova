@@ -1,18 +1,22 @@
 import {
   BUSINESS_ADDRESS,
+  BUSINESS_GEO,
   BUSINESS_REGISTRATION_NUMBER,
   CONTACT_EMAIL,
   CONTACT_PHONE,
   OWNER_NAME,
+  SERVICE_AREA_CITIES,
   SITE_DESCRIPTION,
   SITE_NAME,
   SITE_URL,
 } from "@/lib/site";
+import { QUESTIONS } from "@/modules/faq/questions";
 import { MONTHLY_PLANS } from "@/modules/price-list/plans";
 import { RATE_GROUPS } from "@/modules/price-list/rateGroups";
 
 const BUSINESS_NODE_ID = `${SITE_URL}/#business`;
 const WEBSITE_NODE_ID = `${SITE_URL}/#website`;
+const FAQ_NODE_ID = `${SITE_URL}/#caste-dotazy`;
 
 const priceFormatter = new Intl.NumberFormat("cs-CZ");
 const lowestMonthlyPrice = Math.min(...MONTHLY_PLANS.map(({ price }) => price));
@@ -99,6 +103,10 @@ export const HOME_STRUCTURED_DATA = {
         "@type": "PostalAddress",
         ...BUSINESS_ADDRESS,
       },
+      geo: {
+        "@type": "GeoCoordinates",
+        ...BUSINESS_GEO,
+      },
       founder: {
         "@type": "Person",
         name: OWNER_NAME,
@@ -108,6 +116,10 @@ export const HOME_STRUCTURED_DATA = {
         propertyID: "IČO",
         value: BUSINESS_REGISTRATION_NUMBER,
       },
+      areaServed: [
+        ...SERVICE_AREA_CITIES.map((name) => ({ "@type": "City", name })),
+        { "@type": "Country", name: "Česko" },
+      ],
       currenciesAccepted: "CZK",
       priceRange: PRICE_RANGE,
       hasOfferCatalog: {
@@ -115,6 +127,18 @@ export const HOME_STRUCTURED_DATA = {
         name: "Ceník účetních služeb",
         itemListElement: [monthlyPlansCatalog, ...rateCatalogs],
       },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": FAQ_NODE_ID,
+      url: SITE_URL,
+      inLanguage: "cs",
+      isPartOf: { "@id": WEBSITE_NODE_ID },
+      mainEntity: QUESTIONS.map(({ question, answer }) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
     },
   ],
 };

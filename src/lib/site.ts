@@ -18,6 +18,28 @@ export const BUSINESS_ADDRESS = {
   addressCountry: "CZ",
 };
 
+export const BUSINESS_GEO = {
+  latitude: 50.54799,
+  longitude: 14.12886,
+};
+
 export const BUSINESS_REGISTRATION_NUMBER = "63748339";
 
+export const HOME_LAST_MODIFIED = "2026-11-11";
+
+export const SERVICE_AREA_CITIES = [
+  "Litoměřice",
+  "Lovosice",
+  "Roudnice nad Labem",
+  "Ústí nad Labem",
+];
+
 export const PRIVACY_POLICY_PATH = "/zasady-ochrany-osobnich-udaju";
+
+export const PRIVACY_POLICY_EFFECTIVE_DATE = "2026-11-09";
+
+export const BASE_OPEN_GRAPH = {
+  type: "website" as const,
+  locale: "cs_CZ",
+  siteName: SITE_NAME,
+};

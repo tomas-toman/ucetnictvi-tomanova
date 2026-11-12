@@ -1,7 +1,9 @@
 import { ReactNode } from "react";
-import { CONTACT_EMAIL } from "@/lib/site";
+import { CONTACT_EMAIL, PRIVACY_POLICY_EFFECTIVE_DATE } from "@/lib/site";
 
-const EFFECTIVE_DATE = "9. 11. 2026";
+const EFFECTIVE_DATE = new Intl.DateTimeFormat("cs-CZ", { timeZone: "UTC" })
+  .format(new Date(PRIVACY_POLICY_EFFECTIVE_DATE))
+  .replaceAll(" ", "\u00a0");
 
 const LINK_STYLE =
   "text-teal underline underline-offset-4 transition-colors hover:text-lapis";
